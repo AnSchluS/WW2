@@ -1,5 +1,4 @@
 print("hello, how are you")
-name = input("podaj swoje imie ")
 print("witaj" + name)
 print() 
 print("Witaj", name)
@@ -29,3 +28,5 @@ print(x+y+z)
 def myfunc():
     print(y + " i " + z + " bonzo")
 myfunc()
+import random
+print(random.randrange(1, 10))
