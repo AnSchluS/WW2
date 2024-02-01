@@ -1,0 +1,69 @@
+git init - tworzy nowe lokalne repozytorium
+
+git status - sprawdzenie
+
+git add . - dodanie wszystkich plików do
+		"staging area" 
+              czyli gotowy do commitowania
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+git commit -m "Initial commit"
+
+----------------------------------------------------
+w katalogu roboczym załóż plik .gitignore
+
+git log
+git log --oneline --decorate --graph --all
+-------------------------------------------
+Utwórz nową gałąź (-b) i przełącz się na nią (checkout)
+git checkout -b feature-1  
+
+- wykonaj zmiany w projekcie
+git add .
+git commit -m "Changed project"
+
+- wróć na główną gałąź (HEAD -> main)
+git checkout main
+
+- POŁĄCZ feature-1 z main
+git merge feature-1
+
+1. Scalanie w Git polega na łączeniu sekwencji commitów w pojedynczą, ujednoliconą historię commitów.
+2. W Git istnieją dwa główne sposoby scalania: fast-forward i trójstronne.
+3. Git scala commity automatycznie, chyba że w obydwu sekwencjach commitów występują sprzeczne zmiany.
+
+==================================================================
+PRACA ZE ZDALNYM REPOZYTORIUM
+1. Utwórz konto na github
+2. Utwórz nowy projekt na githubie dla naszego repozytorium lokalnego
+3. Podłącz lokalne repozytorium do zdalnego repozytorium GitHub:
+- Skopiuj adres URL swojego repozytorium na GitHub.
+- Dodaj zdalne repozytorium do lokalnego repozytorium:
+git remote add origin <adres_url>
+
+4. Wysyłanie zmian do repozytorium na GitHub:
+git push -u origin main
+
+Uwaga: jeżeli na gihubie sa zmiany, choćby założone nowe pliki README, LICENCE
+- to trzeba wcześniej pobrać te zmiany z gihuba:
+git pull origin main
+
+Pobierze to najnowsze zmiany z repozytorium na GitHub 
+i spróbuje scalić je z Twoimi lokalnymi zmianami. 
+Jeżeli pojawią się konflikty, będziesz musiał je rozwiązać ręcznie. 
+Po scaleniu możesz ponownie użyć git push.
+
+5. Wymuś zapisanie Twoich lokalnych zmian na zdalnym repozytorium:
+git push -u origin main --force
+
+Ostrzeżenie:
+To podejście wymusza zapisanie Twoich lokalnych zmian, zastępując zdalną historię. 
+To może prowadzić do utraty danych, jeśli nie jesteś pewien, co robisz. 
+Używaj tej opcji ostrożnie i tylko wtedy, 
+gdy jesteś pewien, że chcesz zastąpić historię zdalną.
+
+6. Po wykonaniu jednej z tych operacji, powinieneś być w stanie 
+pomyślnie wysłać (git push) swoje zmiany na zdalne repozytorium.
+git push
