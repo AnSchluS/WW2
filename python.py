@@ -26,3 +26,6 @@ y="kobra"
 z="tiger"
 print(x,y,z)
 print(x+y+z)
+def myfunc():
+    print(y + " i " + z + " bonzo")
+myfunc()
